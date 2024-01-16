@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import "./Eightball.css";
 
 const EIGHTBALL_DEFAULT = [
   { msg: "It is certain.", color: "green" },
@@ -29,8 +29,8 @@ const EIGHTBALL_DEFAULT = [
  * for the eightball.
  *
  * Props:
- * - answers - And array of objects, with each object containing { msg, color },
- * each with string values.
+ * - answers - And array of objects, with key-value pairings of { msg, color },
+ *  each with string values.
  *
  * States:
  * - color - String
@@ -43,7 +43,6 @@ function Eightball({ answers=EIGHTBALL_DEFAULT }) {
   const [color, setColor] = useState("black");
   const [message, setMessage] = useState("Think of a Question.");
 
-  //Need handle click for
   function handleClick(evt) {
     const randIdx = Math.floor(Math.random()*answers.length);
     setColor(answers[randIdx].color);
@@ -55,7 +54,9 @@ function Eightball({ answers=EIGHTBALL_DEFAULT }) {
   }
   return (
     <div className="Eightball">
-      <button style={myStyles} onClick={handleClick}>{message}</button>
+      <button className="Eightball-ball" style={myStyles} onClick={handleClick}>
+        <p className="Eightball-message"> {message} </p>
+      </button>
     </div>
   )
 };

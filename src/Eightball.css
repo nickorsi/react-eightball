@@ -1,0 +1,16 @@
+.Eightball {
+  background-color: aqua;
+  height:300px;
+  width:300px;
+};
+
+.Eightball-ball {
+  height:300px;
+  width:300px;
+  background-color: blueviolet;
+};
+
+.Eightball-message {
+  background-color: red;
+  color:white
+};
